@@ -163,7 +163,7 @@ class Food extends Component {
               <div>
                 <SearchBar
                   className="search-bar"
-                  placeholder="Search food"
+                  placeholder="What did you eat today?"
                   {...props.searchProps}
                 />
                 <hr />

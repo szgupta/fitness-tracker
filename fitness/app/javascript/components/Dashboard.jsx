@@ -49,7 +49,6 @@ class Dashboard extends Component {
 
 
   calcTDEE = (user) => {
-    console.log(user)
     var bmr = 0
     if (user.gender == 'male') {
       bmr = 66 + (13.7 * user.weight) + (5 * user.height) - (6.8 * user.age)
@@ -98,7 +97,6 @@ class Dashboard extends Component {
     }
 
     for (var h of history) {
-      console.log(h)
       macros.fats += parseFloat(h.fat)
       macros.calories += parseFloat(h.calories)
       macros.carbs += parseFloat(h.carbs)
@@ -138,18 +136,22 @@ class Dashboard extends Component {
     return (
       <div className="jumbotron jumbotron-fluid bg-transparent">
         <div className="container secondary-color">
-          <h1 className="display-4">Welcome!</h1>
+          <h1 className="display-4">Welcome, {user.first_name}!</h1>
           <p className="lead">
-          {user.email}, get started by adding your meals for the day!
+            Get started by <a href='/pick_food'> adding your meals </a> for the day!
           </p>
           <hr className="my-4" />
-          <h3 className="display-4">Today</h3>
+          <h2>Today's Meals 🍞 🍇</h2>
           <BootstrapTable 
             bootstrap4
             hover
             striped
             keyField="food_id" data={ this.state.history } columns={ this.state.columns } /> 
 
+          <Link to="/pick_food" className="btn btn-lg custom-button mr-2" role="button">Add Food</Link>
+          <hr className="my-4" />
+
+          <h2>Meeting Your Goals 💪</h2>
           <Card>
             <Card.Header>Progress</Card.Header>
             <Card.Body>
@@ -161,8 +163,6 @@ class Dashboard extends Component {
 
             </Card.Body>
           </Card>
-          
-          <Link to="/pick_food" className="btn btn-lg custom-button mr-2" role="button">Add Food</Link>
         </div>
       </div>
     );
