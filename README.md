@@ -1,4 +1,6 @@
-# Fitness App
+# FitnessTracker 💪
+Fully-featured web app to track your macros throughout the day, built on an RoR backend and React.js frontend.
+
 ## Getting started
 ### Requirements
 * Ruby
@@ -7,7 +9,7 @@
 
 ### Building and running app
 1. Git clone
-2. Navigate to `rails-app/fitness` directory
+2. Navigate to `fitness` directory
 3. `bundle install`
 4. `yarn install`
 5. `rails s`
@@ -44,12 +46,15 @@ Our schema can be found as a collection of `migration`s located in `/fitness/db/
     - [Profile.jsx](fitness/app/javascript/components/Profile.jsx)
 - Dashboard
     - [Dashboard.jsx](fitness/app/javascript/components/Dashboard.jsx)
-- History
+    - [Backend](fitness/app/controllers/api/users_controller.rb#L32)
+- Analytics/History
     - [History.jsx](fitness/app/javascript/components/history/History.jsx)
     - [History.css](fitness/app/javascript/components/history/History.css)
+    - [Backend](fitness/app/controllers/api/users_controller.rb#L103)
 - Food Picker
     - [Food.jsx](fitness/app/javascript/components/Food.jsx)
     - [Food.css](fitness/app/javascript/components/Food.css)
+    - [Backend](fitness/app/controllers/api/foods_controller.rb#L16)
 - Session management
     - [sessions_controller.rb](fitness/app/controllers/api/sessions_controller.rb)
     - [application_controller.rb](fitness/app/controllers/application_controller.rb)
